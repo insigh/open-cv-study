@@ -13,7 +13,8 @@ def create_rgb_hist(image):
             g = image[row, col, 1]
             r = image[row, col, 2]
             index = (b//bsize)*16*16 + (g//bsize)*16 + r//bsize
-            rgb_hist[int(index), 0] += 1
+            rgb_hist[np.int(index), 0] += 1
+    cv.normalize(src=rgb_hist, dst=rgb_hist)
     return rgb_hist
 
 
@@ -21,8 +22,6 @@ def normalization(hist):
     mean = np.sum(hist)/hist.size
     var = np.sqrt(np.sum(np.square(hist - mean)))/hist.size
     return (hist - mean)/var
-
-
 
 
 def hist_compare(image1, image2):
