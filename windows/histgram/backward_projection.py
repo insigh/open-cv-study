@@ -27,8 +27,8 @@ def back_projection_demo(sample, target):
 
 
 print("=========hello python!==========")
-target = cv.imread(filename="C:\\Users\zcj\Desktop\\20180821153704.jpg")
-roi = cv.imread(filename="C:\\Users\zcj\Desktop\\20180823190802.png")
+target = cv.imread(filename="C:\\Users\zcj\Desktop\\videos\\20180821153704.jpg")
+roi = cv.imread(filename="C:\\Users\zcj\Desktop\\videos\\20180823190802.png")
 # cv.namedWindow(winname="input image", flags=cv.WINDOW_AUTOSIZE)
 # cv.imshow(winname="roi", mat=roi)
 # cv.imshow(winname="target", mat=target)

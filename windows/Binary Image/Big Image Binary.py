@@ -11,7 +11,7 @@ def big_image_binary_demo(image):
     for row in range(0, h, ch):
         for col in range(0, w, cw):
             roi = gray[row:row+ch, col:col+cw]
-            ret, dst = cv.threshold(roi, 0, 255, cv.THRESH_OTSU)
+            ret, dst = cv.threshold(src=roi, thresh=0, maxval=255, type=cv.THRESH_OTSU)
             gray[row:row+ch, col:col+cw] = dst
             print(np.std(dst), np.mean(dst))
     cv.imwrite(filename=".\\big.jpg", img=gray)
@@ -20,8 +20,8 @@ def big_image_binary_demo(image):
 
 print("=========hello python!==========")
 src = cv.imread(filename="C:\\Users\zcj\Desktop\docum\photos\8776db91659bf1b9abada9bbc9d9f15d0b085642.jpg")
-# cv.namedWindow(winname="input image", flags=cv.WINDOW_AUTOSIZE)
-# cv.imshow(winname="input image", mat=src)
+cv.namedWindow(winname="input image", flags=cv.WINDOW_AUTOSIZE)
+cv.imshow(winname="input image", mat=src)
 print("=========Functions start here!==========")
 big_image_binary_demo(image=src)
 print("=========Functions end here!==========")
